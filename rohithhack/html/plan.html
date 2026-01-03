@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Plan a Trip | GlobeTrotter</title>
+    <link rel="stylesheet" href="/style/plan.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="topbar">
+    <h2>🌍 GlobeTrotter</h2>
+</header>
+
+<!-- MAIN -->
+<div class="plan-wrapper">
+
+    <h1>Plan a New Trip ✈️</h1>
+
+    <!-- FORM -->
+    <div class="trip-form">
+
+        <div class="field">
+            <label>Start Date</label>
+            <input type="date">
+        </div>
+
+        <div class="field">
+            <label>Select a Place</label>
+            <input type="text" id="placeInput" placeholder="India, Paris, Japan..." onkeyup="loadSuggestions()">
+        </div>
+
+        <div class="field">
+            <label>End Date</label>
+            <input type="date">
+        </div>
+
+    </div>
+
+    <h2 class="section-title">Suggested Places & Activities</h2>
+
+    <!-- SUGGESTIONS -->
+    <div class="suggest-grid" id="suggestGrid"></div>
+
+</div>
+
+<script>
+const data = {
+    india: [
+        { name: "Goa Beach", img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e" },
+        { name: "Taj Mahal", img: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da" },
+        { name: "Kerala Backwaters", img: "https://images.unsplash.com/photo-1587474260584-136574528ed5" },
+        { name: "Manali Hills", img: "https://images.unsplash.com/photo-1501785888041-af3ef285b470" }
+    ],
+    paris: [
+        { name: "Eiffel Tower", img: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34" },
+        { name: "Louvre Museum", img: "https://images.unsplash.com/photo-1543349689-9a4d426bee8e" },
+        { name: "Seine River", img: "https://images.unsplash.com/photo-1508057198894-247b23fe5ade" }
+    ],
+    japan: [
+        { name: "Mount Fuji", img: "https://images.unsplash.com/photo-1549692520-acc6669e2f0c" },
+        { name: "Tokyo City", img: "https://images.unsplash.com/photo-1505067216369-2edc7b67ddec" },
+        { name: "Kyoto Temple", img: "https://images.unsplash.com/photo-1526481280691-3d3b1c7c84d4" }
+    ]
+};
+
+function loadSuggestions() {
+    const place = document.getElementById("placeInput").value.toLowerCase();
+    const grid = document.getElementById("suggestGrid");
+    grid.innerHTML = "";
+
+    if (!data[place]) return;
+
+    data[place].forEach(item => {
+        const card = document.createElement("div");
+        card.className = "suggest-card";
+        card.innerHTML = `
+            <img src="${item.img}">
+            <div class="card-text">${item.name}</div>
+        `;
+        grid.appendChild(card);
+    });
+}
+</script>
+
+</body>
+</html>

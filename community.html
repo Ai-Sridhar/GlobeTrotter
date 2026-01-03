@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Community – GlobeTrotter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- Header -->
+  <div class="header">
+    <h2>🌍 Community Trips</h2>
+    <img src="./IMAGE/logo.jpeg" class="profile">
+  </div>
+
+  <!-- Search / Filter Bar -->
+  <div class="top-bar">
+    <input type="text" id="searchCountry" placeholder="Search country..." onkeyup="applyFilters()">
+
+    <select id="filterTransport" onchange="applyFilters()">
+      <option value="all">All Transport</option>
+      <option value="Air">Air</option>
+      <option value="Road">Road</option>
+      <option value="Water">Water</option>
+    </select>
+
+    <select id="sortPrice" onchange="applyFilters()">
+      <option value="none">Sort by Price</option>
+      <option value="low">Low → High</option>
+      <option value="high">High → Low</option>
+    </select>
+
+    <button onclick="go('calendar.html')">📅 Calendar</button>
+    <button onclick="go('admin.html')">🛠 Admin</button>
+  </div>
+
+  <!-- Community Grid -->
+  <div class="community-grid" id="placesGrid">
+
+    <!-- INDIA -->
+    <div class="trip-card">
+      <div class="image-container">
+        <img src="./IMAGE/india.jpeg" class="country-image">
+       
+      </div>
+      <h3>India</h3>
+      <p>₹20,000 • Air, Road</p>
+      <div class="trip-actions">
+        <button onclick="addToWishlist('India')">🔖 Wishlist</button>
+        <button onclick="goToBooking('India')">📌 Book Now</button>
+      </div>
+    </div>
+
+    <!-- ANDAMAN -->
+    <div class="trip-card">
+      <div class="image-container">
+        <img src="./IMAGE/island.jpeg" class="country-image">
+        
+      </div>
+      <h3>Andaman & Nicobar</h3>
+      <p>₹30,000 • Air, Water</p>
+      <div class="trip-actions">
+        <button onclick="addToWishlist('Andaman & Nicobar')">🔖 Wishlist</button>
+        <button onclick="goToBooking('Andaman & Nicobar')">📌 Book Now</button>
+      </div>
+    </div>
+
+    <!-- USA -->
+    <div class="trip-card">
+      <div class="image-container">
+        <img src="./IMAGE/city 1.jpeg" class="country-image">
+        
+      </div>
+      <h3>United States</h3>
+      <p>₹50,000 • Air</p>
+      <div class="trip-actions">
+        <button onclick="addToWishlist('America')">🔖 Wishlist</button>
+        <button onclick="goToBooking('America')">📌 Book Now</button>
+      </div>
+    </div>
+
+    <!-- JAPAN -->
+    <div class="trip-card">
+      <div class="image-container">
+        <img src="./IMAGE/city 10.jpeg" class="country-image">
+       
+      </div>
+      <h3>Japan</h3>
+      <p>₹45,000 • Air</p>
+      <div class="trip-actions">
+        <button onclick="addToWishlist('Japan')">🔖 Wishlist</button>
+        <button onclick="goToBooking('Japan')">📌 Book Now</button>
+      </div>
+    </div>
+
+    <!-- FRANCE -->
+    <div class="trip-card">
+      <div class="image-container">
+        <img src="./IMAGE/city 11.jpeg" class="country-image">
+        
+      </div>
+      <h3>France</h3>
+      <p>₹40,000 • Air</p>
+      <div class="trip-actions">
+        <button onclick="addToWishlist('France')">🔖 Wishlist</button>
+        <button onclick="goToBooking('France')">📌 Book Now</button>
+      </div>
+    </div>
+
+    <!-- AUSTRALIA -->
+    <div class="trip-card">
+      <div class="image-container">
+        <img src="./IMAGE/city 12.jpeg" class="country-image">
+        
+      </div>
+      <h3>Australia</h3>
+      <p>₹55,000 • Air</p>
+      <div class="trip-actions">
+        <button onclick="addToWishlist('Australia')">🔖 Wishlist</button>
+        <button onclick="goToBooking('Australia')">📌 Book Now</button>
+      </div>
+    </div>
+
+    <!-- Add remaining countries same pattern -->
+    <!-- Germany, Italy, Spain, UK, Dubai, Thailand, Egypt, Brazil, Canada, China, Russia, Mexico, South Africa -->
+
+  </div>
+
+  <!-- Wishlist Section -->
+  <div id="wishlistContainer">
+    <h3>❤️ Wishlist</h3>
+    <ul id="wishlist"></ul>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

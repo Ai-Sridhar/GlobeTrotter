@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="/style/style.css">
+</head>
+<body>
+
+<div class="screen">
+    <div class="card">
+
+        <div class="photo-circle">Photo</div>
+
+        <!-- USERNAME -->
+        <input type="text" id="loginUser" placeholder="Username">
+
+        <div class="password-box">
+            <input type="password" id="loginPass" placeholder="Password">
+        </div>
+
+        <button onclick="login()">Login</button>
+
+        <p id="error" class="error-text"></p>
+
+        <p class="link-text">
+            New user? <a href="./register.html">Register</a>
+        </p>
+
+    </div>
+</div>
+
+<script>
+function toggleLogin() {
+    let p = document.getElementById("loginPass");
+    p.type = p.type === "password" ? "text" : "password";
+}
+
+function login() {
+    let user = document.getElementById("loginUser").value;
+    let pass = document.getElementById("loginPass").value;
+
+    let storedUser = localStorage.getItem("username");
+    let storedPass = localStorage.getItem("password");
+
+    if (user === storedUser && pass === storedPass) {
+        window.location.href = "home.html";
+    } else {
+        document.getElementById("error").innerText = "❌ Invalid Username or Password";
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel – GlobeTrotter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- Header -->
+  <div class="header">
+    <h2>🛠 Admin Dashboard</h2>
+    <div>
+      <button onclick="go('index.html')">🏠 Home</button>
+      <button onclick="toggleTheme()">🌙 / ☀️</button>
+    </div>
+  </div>
+
+  <!-- Admin Main Buttons -->
+  <div class="admin-buttons">
+    <button>📊 User Trends</button>
+    <button>🔥 Popular Cities</button>
+    <button>🎯 Popular Activities</button>
+    <button>👥 Manage Users</button>
+    <button>➕ Add Destination</button>
+  </div>
+
+  <!-- Live Users -->
+  <div class="admin-card">
+    <h3>👤 Active Users Now</h3>
+    <h2 id="liveUsers">120</h2>
+  </div>
+
+  <!-- Popular Cities -->
+  <div class="admin-card wide">
+    <h3>🌆 Popular Cities</h3>
+
+    <div class="city-grid">
+      <div class="city-card">
+        <img src="./IMAGE/city 2.jpeg">
+        <p>Paris</p>
+      </div>
+
+      <div class="city-card">
+        <img src="./IMAGE/city 3.jpeg">
+        <p>Tokyo</p>
+      </div>
+
+      <div class="city-card">
+        <img src="./IMAGE/city 4.jpeg">
+        <p>New York</p>
+      </div>
+
+      <div class="city-card">
+        <img src="./IMAGE/city 5.jpeg">
+        <p>Dubai</p>
+      </div>
+
+      <div class="city-card">
+        <img src="./IMAGE/city13.jpeg">
+        <p>Rome</p>
+      </div>
+
+      <div class="city-card">
+        <img src="/IMAGE/city15.jpeg">
+        <p>Sydney</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popular Activities -->
+  <div class="admin-card wide">
+    <h3>🎯 Popular Activities</h3>
+
+    <div class="activity-grid">
+      <div class="activity-card">
+        <img src="./IMAGE/scuba.jpeg">
+        <p>Scuba Diving</p>
+      </div>
+
+      <div class="activity-card">
+        <img src="./IMAGE/trekking.jpeg">
+        <p>Trekking</p>
+      </div>
+
+      <div class="activity-card">
+        <img src="./IMAGE/sky diving.jpeg">
+        <p>Sky Diving</p>
+      </div>
+
+      <div class="activity-card">
+        <img src="./IMAGE/cultural.jpeg">
+        <p>Cultural Tours</p>
+      </div>
+
+      <div class="activity-card">
+        <img src="./IMAGE/safari.jpeg">
+        <p>Safari</p>
+      </div>
+
+      <div class="activity-card">
+        <img src="./IMAGE/cruise.jpeg">
+        <p>Cruise Trips</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- User Trends -->
+  <div class="admin-card">
+    <h3>📈 User Trends</h3>
+    <p>Most Booked Country: <b>India</b></p>
+    <p>Most Used Transport: <b>Air</b></p>
+    <p>Peak Booking Month: <b>December</b></p>
+  </div>
+
+  <!-- Manage Users -->
+  <div class="admin-card">
+    <h3>👥 Manage Users</h3>
+    <button>View Users</button>
+    <button>Block User</button>
+    <button>Remove User</button>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

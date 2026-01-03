@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="/style/style.css">
+</head>
+<body>
+
+<div class="screen">
+    <div class="card large">
+
+        <div class="photo-circle">Photo</div>
+
+        <div class="row">
+            <input type="text" id="fname" placeholder="First Name">
+            <input type="text" id="lname" placeholder="Last Name">
+        </div>
+
+        <div class="row">
+            <input type="email" id="email" placeholder="Email Address">
+            <input type="text" id="phone" placeholder="Phone Number">
+        </div>
+
+        <div class="row">
+            <input type="text" id="city" placeholder="City">
+            <input type="text" id="country" placeholder="Country">
+        </div>
+
+        <textarea placeholder="Additional Information"></textarea>
+
+        <div class="password-box">
+            <input type="password" id="regPass" placeholder="Password">
+        </div>
+
+        <button onclick="registerUser()">Register Users</button>
+
+        <p class="link-text">
+            Already have an account? <a href="./login.html">Login</a>
+        </p>
+
+    </div>
+</div>
+
+<script>
+function toggleReg() {
+    let p = document.getElementById("regPass");
+    p.type = p.type === "password" ? "text" : "password";
+}
+
+function registerUser() {
+    let pass = document.getElementById("regPass").value;
+
+    if (pass === "") {
+        alert("Please enter password");
+        return;
+    }
+
+    localStorage.setItem("userPassword", pass);
+    alert("Registration Successful!");
+    window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>

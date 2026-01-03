@@ -1,0 +1,147 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+/* Center Screen */
+.screen {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Glass Card */
+.card {
+    width: 340px;
+    padding: 30px 25px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.card.large {
+    width: 460px;
+}
+
+/* Profile Photo */
+.photo-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto 25px;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Inputs */
+input, textarea {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 14px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    background: rgba(255,255,255,0.85);
+    transition: all 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(118,75,162,0.3);
+}
+
+/* Rows */
+.row {
+    display: flex;
+    gap: 12px;
+}
+
+/* Password Box */
+.password-box {
+    text-align: left;
+}
+
+.show-pass {
+    font-size: 13px;
+    color: #fff;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 30px;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(135deg, #ff512f, #dd2476);
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(221,36,118,0.45);
+}
+
+/* Links */
+.link-text {
+    margin-top: 18px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.link-text a {
+    color: #ffd86f;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.link-text a:hover {
+    text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 500px) {
+    .card,
+    .card.large {
+        width: 100%;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+}

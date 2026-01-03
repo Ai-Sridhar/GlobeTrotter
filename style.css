@@ -1,0 +1,214 @@
+/* ---------------- General Styles ---------------- */
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.app {
+  width: 95%;
+  margin: 20px auto;
+  background: rgba(255,255,255,0.95);
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+}
+
+/* ---------------- Header ---------------- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.profile {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid #555;
+}
+
+/* ---------------- Top Bar ---------------- */
+.top-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.top-bar input, .top-bar select {
+  padding: 8px 12px;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+  flex: 1;
+}
+
+button {
+  padding: 10px 16px;
+  border-radius: 20px;
+  border: none;
+  background: linear-gradient(45deg, #ff758c, #ff7eb3);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* ---------------- Community Grid ---------------- */
+.community-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.trip-card {
+  background: white;
+  border-radius: 15px;
+  padding: 10px;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.trip-card:hover {
+  transform: translateY(-5px);
+}
+
+.image-container {
+  position: relative;
+}
+
+.country-image {
+  width: 100%;
+  height: 150px;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.country-logo {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.trip-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+/* ---------------- Wishlist ---------------- */
+#wishlistContainer ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#wishlistContainer li {
+  background: #ffe3ec;
+  margin: 5px 0;
+  padding: 5px 10px;
+  border-radius: 12px;
+}
+
+/* ---------------- Calendar ---------------- */
+.calendar-header {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+#calendarContainer {
+  margin-top: 10px;
+}
+
+.day {
+  height: 100px;
+  background: #f1f1f1;
+  border-radius: 12px;
+  padding: 5px;
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.day:hover {
+  background: #ffe3ec;
+  transform: scale(1.05);
+}
+
+.day .trip-country {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #333;
+}
+
+/* ---------------- Glow effect ---------------- */
+.day.selected {
+  box-shadow: 0 0 10px 3px #ff758c;
+}
+
+/* ---------------- Booking Page ---------------- */
+#bookingForm input, #bookingForm select {
+  padding: 8px;
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+}
+
+#bookingForm button {
+  width: 100%;
+}
+
+/* ---------------- Admin Panel ---------------- */
+.admin-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.admin-card {
+  background: #f1f1f1;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.admin-card.wide {
+  grid-column: span 2;
+}
+
+/* Popular cities / activities images */
+.city-grid, .activity-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(120px,1fr));
+  gap: 10px;
+}
+
+.city-card, .activity-card {
+  text-align:center;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.city-card img, .activity-card img {
+  width:100%;
+  height:80px;
+  object-fit:cover;
+}

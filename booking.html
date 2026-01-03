@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Booking – GlobeTrotter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- Header -->
+  <div class="header">
+    <h2>📌 Book Your Trip</h2>
+    <div>
+      <button onclick="go('community.html')">⬅ Back</button>
+      <button onclick="toggleTheme()">🌙 / ☀️</button>
+    </div>
+  </div>
+
+  <!-- Booking Details -->
+  <div class="admin-card wide">
+    <h3>🌍 Trip Details</h3>
+    <p><b>Country:</b> <span id="bookingCountry">Selected Country</span></p>
+    <p><b>Price:</b> <span id="bookingPrice">₹ --</span></p>
+    <p><b>Transport:</b> <span id="bookingTransport">--</span></p>
+    <p><b>Departure Time:</b> 09:00 AM</p>
+  </div>
+
+  <!-- Booking Form -->
+  <div class="admin-card wide">
+    <h3>👤 Traveller Information</h3>
+
+    <form id="bookingForm">
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email Address" required>
+
+      <select required>
+        <option value="">Select Transport</option>
+        <option>Air</option>
+        <option>Road</option>
+        <option>Water</option>
+      </select>
+
+      <input type="date" required>
+
+      <h4>💳 Payment Method</h4>
+      <select required>
+        <option>UPI</option>
+        <option>Credit Card</option>
+        <option>Debit Card</option>
+        <option>Net Banking</option>
+      </select>
+
+      <button type="button" onclick="confirmBooking()">Confirm Booking</button>
+    </form>
+
+    <!-- Success Message -->
+    <div id="successMsg" style="display:none;text-align:center">
+      <h2>🎉 Booking Confirmed!</h2>
+      <p>Your trip has been successfully booked.</p>
+      <button onclick="go('index.html')">🏠 Go Home</button>
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

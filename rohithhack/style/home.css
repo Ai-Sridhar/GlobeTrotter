@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    background: linear-gradient(135deg, #ff512f, #dd2476);
+    position: relative;
+}
+
+.logo {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+    border-bottom: 2px solid #ffd86f;
+}
+
+/* HAMBURGER */
+.hamburger {
+    display: none;
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+}
+
+/* CONTAINER */
+.container {
+    padding: 30px 40px;
+}
+
+/* BANNER */
+.banner {
+    height: 260px;
+    border-radius: 20px;
+    background: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.banner-text {
+    background: rgba(0,0,0,0.45);
+    padding: 22px 35px;
+    border-radius: 14px;
+    color: white;
+    text-align: center;
+}
+
+/* SEARCH */
+.search-bar {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 35px;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+}
+
+.search-bar button {
+    padding: 14px 18px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+/* HEADINGS */
+h2 {
+    color: white;
+    margin-bottom: 18px;
+}
+
+/* CARD ROW */
+.card-row {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    overflow-x: auto;
+}
+
+/* REGION CARDS */
+.region-card {
+    min-width: 170px;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.region-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+}
+
+.region-card span {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    font-weight: 600;
+}
+
+.region-card:hover {
+    transform: translateY(-8px);
+}
+
+/* TRIP CARDS */
+.trip-card {
+    min-width: 220px;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.trip-card img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+}
+
+.trip-card p {
+    padding: 12px;
+    font-weight: 600;
+}
+
+/* PLAN TRIP */
+.plan-trip {
+    text-align: right;
+}
+
+.plan-trip button {
+    padding: 14px 30px;
+    border-radius: 30px;
+    border: none;
+    background: linear-gradient(135deg,#ff512f,#dd2476);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: linear-gradient(135deg,#ff512f,#dd2476);
+        flex-direction: column;
+        gap: 20px;
+        width: 220px;
+        padding: 20px;
+        display: none;
+        border-radius: 0 0 12px 12px;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .container {
+        padding: 20px;
+    }
+}

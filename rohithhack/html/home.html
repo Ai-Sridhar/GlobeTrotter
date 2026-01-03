@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GlobeTrotter | Home</title>
+    <link rel="stylesheet" href="/style/home.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">🌍 GlobeTrotter</div>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">My Trips</a></li>
+        <li><a href="#">Plan Trip</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Logout</a></li>
+    </ul>
+
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+
+    <!-- BANNER -->
+    <div class="banner">
+        <div class="banner-text">
+            <h1>Explore the World</h1>
+            <p>Your journey starts here ✈️</p>
+        </div>
+    </div>
+
+    <!-- SEARCH BAR -->
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search city..." onkeyup="searchCity()">
+        <button>Group</button>
+        <button>Filter</button>
+        <button>Sort</button>
+    </div>
+
+    <!-- TOP REGIONAL -->
+    <h2>Top Regional Selections</h2>
+    <div class="card-row" id="cityCards">
+
+        <div class="region-card" data-city="india">
+            <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da">
+            <span>India</span>
+        </div>
+
+        <div class="region-card" data-city="paris">
+            <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34">
+            <span>Paris</span>
+        </div>
+
+        <div class="region-card" data-city="dubai">
+            <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c">
+            <span>Dubai</span>
+        </div>
+
+        <div class="region-card" data-city="japan">
+            <img src="https://images.unsplash.com/photo-1549692520-acc6669e2f0c">
+            <span>Japan</span>
+        </div>
+
+        <div class="region-card" data-city="usa">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+            <span>USA</span>
+        </div>
+
+    </div>
+
+    <!-- PREVIOUS TRIPS -->
+    <h2>Previous Trips</h2>
+    <div class="card-row">
+        <div class="trip-card">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+            <p>Beach Trip</p>
+        </div>
+
+        <div class="trip-card">
+            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e">
+            <p>Mountain Trip</p>
+        </div>
+
+        <div class="trip-card">
+            <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+            <p>Adventure Trip</p>
+        </div>
+    </div>
+
+    <!-- PLAN TRIP -->
+    <div class="plan-trip">
+        <a href="plan.html"><button>+ Plan a Trip</button></a>
+    </div>
+
+</div>
+
+<!-- JS -->
+<script>
+function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("show");
+}
+
+function searchCity() {
+    let input = document.getElementById("searchInput").value.toLowerCase();
+    let cards = document.querySelectorAll(".region-card");
+
+    cards.forEach(card => {
+        let city = card.getAttribute("data-city");
+        card.style.display = city.includes(input) ? "block" : "none";
+    });
+}
+</script>
+
+</body>
+</html>
